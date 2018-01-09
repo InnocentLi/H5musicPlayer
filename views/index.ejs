@@ -1,0 +1,32 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  	<header>
+  		 <h1><%= title %></h1>
+         <ul class="type" id="type">
+         	<li data-type="columu" class="selected">条形图</li>
+            <li data-type="dot">点状图</li>
+         </ul>
+  		 <p>
+  		 	音量: <input type="range" id="volume" min="0" max="100" value="60 "> 	
+  		 	<span id="volnum">60</span>
+  		 </p>
+  	</header>
+      <div class="left">
+      	<ul id="list">
+      		<% music.forEach(function(name){
+      	%>	
+           <li title="<%= name %>"><%= name %></li>
+      	  <%})%>
+      		
+      	</ul>
+      </div>
+      <div class="right" id="box"></div>
+      <script type="text/javascript" src="/javascripts/index.js"></script>
+  </body>
+</html>
